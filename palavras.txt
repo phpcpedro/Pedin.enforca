@@ -1,0 +1,10 @@
+cachorro
+gato
+leão
+urso
+macaco
+cavalo
+elefante
+canguru
+onça-pintada
+pato

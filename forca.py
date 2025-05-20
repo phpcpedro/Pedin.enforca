@@ -1,7 +1,24 @@
+import random
+
 def jogar():
     print("*********************************")
     print("*** Bem-vindo ao jogo da Forca! ***")
     print("*********************************")
+    
+    arquivo = open("neguin_enforca-main/palavras.txt","r")
+    palavras =  []
+    
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+    
+    
+    arquivo.close()
+    
+    aleatoria = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[aleatoria].upper()
+    
+
     
     palavra_secreta = "yamal".upper()
     letras_acertadas = ["_"] * len(palavra_secreta)
@@ -29,7 +46,7 @@ def jogar():
     if acertou:
         print("Parabéns, você ganhou!")
     else:
-        print("Você perdeu, seu burro! A palavra era:", palavra_secreta)
+        print("Você perdeu BISCATE ! A palavra era:", palavra_secreta)
         
     print("Fim do jogo")
 
