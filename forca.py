@@ -1,10 +1,11 @@
 import random
 
-def jogar():
+def mensagem_inicial():
     print("*********************************")
     print("*** Bem-vindo ao jogo da Forca! ***")
     print("*********************************")
     
+def criar_palavra_secreta():
     arquivo = open("neguin_enforca-main/palavras.txt","r")
     palavras =  []
     
@@ -17,17 +18,32 @@ def jogar():
     
     aleatoria = random.randrange(0, len(palavras))
     palavra_secreta = palavras[aleatoria].upper()
-    
+    return palavra_secreta
+ 
+def define_letras_acertadas(palavra):
+    return ["_" for letra in palavra]
 
-    
-    palavra_secreta = "yamal".upper()
-    letras_acertadas = ["_"] * len(palavra_secreta)
+def escreva_letra();
+    chute = input("Qual letra? ")
+    chute = chute.strip().upper()
+    return chute 
+ 
+def jogar():
+
+    mensagem_inicial()
+    palavra_secreta = criar_palavra_secreta()
+    letras_acertadas = define_letras_acertadas(palavra_secreta)
     
     enforcou = False
     acertou = False
     erros = 0 
     
-    while not enforcou and not acertou:
+    print(letras_acertadas)
+    
+    while (not enforcou and not acertou):
+
+        chute = escreva_letra()
+
         print(" ".join(letras_acertadas))  # Mostra as letras acertadas até agora
         chute = input("Qual é a letra? ")
         chute = chute.strip().upper()
